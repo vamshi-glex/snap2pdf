@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Generator Pro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>PDF Generator Pro</h1>
+            <p>Transform your text into beautiful PDF documents instantly</p>
+        </div>
+
+        <form id="pdfForm">
+            <div class="form-group">
+                <label for="filename">Document Title:</label>
+                <div class="input-container">
+                    <input type="text" id="filename" name="filename" placeholder="Enter document title..." required>
+                </div>
+            </div>
+
+            <div class="options-row">
+                <div class="form-group">
+                    <label for="fontSize">Font Size:</label>
+                    <select id="fontSize" name="fontSize">
+                        <option value="12">12pt</option>
+                        <option value="14" selected>14pt</option>
+                        <option value="16">16pt</option>
+                        <option value="18">18pt</option>
+                        <option value="20">20pt</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pageFormat">Page Format:</label>
+                    <select id="pageFormat" name="pageFormat">
+                        <option value="a4" selected>A4</option>
+                        <option value="letter">Letter</option>
+                        <option value="legal">Legal</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Document Content:</label>
+                <div class="input-container">
+                    <textarea id="content" name="content" placeholder="Enter your text content here...
+
+You can write multiple paragraphs, and the PDF generator will format them nicely.
+
+• Add bullet points
+• Create lists
+• Format your content as needed
+
+The generated PDF will maintain proper spacing and formatting." required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-generate">
+                Generate PDF Document
+            </button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Generating your PDF...</p>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            ✅ PDF generated successfully! Your download should start automatically.
+        </div>
+
+        <div class="preview-section" id="previewSection">
+            <h3>📄 Document Preview:</h3>
+            <div class="preview-content" id="previewContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
